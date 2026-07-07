@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guardia Puertos — Reporte Operativo</title>
+<link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+<div class="inapp-warning" id="inapp-warning" role="dialog" aria-modal="true" aria-labelledby="inapp-warning-title">
+  <div class="inapp-warning-card">
+    <div class="inapp-warning-icon">↗</div>
+    <h2 id="inapp-warning-title">Abrí este reporte en tu navegador</h2>
+    <p>La vista previa de WhatsApp puede deformar la pantalla y limitar algunas funciones. Abrilo en Chrome o Safari.</p>
+    <ol class="inapp-steps" id="inapp-steps"></ol>
+    <div class="inapp-warning-actions">
+      <button type="button" class="inapp-dismiss" onclick="cerrarAvisoNavegador()">Continuar de todos modos</button>
+      <button type="button" class="inapp-help" onclick="mostrarAyudaNavegador()">Ver los pasos</button>
+    </div>
+  </div>
+</div>
+<div class="topbar"><div class="topbar-inner"><div class="brand"><div class="brand-mark">GP</div><div><div class="brand-title">Guardia Puertos</div><div class="brand-sub">San Martín · Timbúes · Lima</div></div></div><div class="report-picker-wrap"><div class="report-picker-title">Reporte de las</div><div class="report-picker" id="report-picker"><button class="report-tab" data-value="h8"><span class="report-tab-time">00 HS / 08 HS</span><span class="report-tab-label">Sábado por la mañana</span></button><button class="report-tab" data-value="h16"><span class="report-tab-time">16 HS</span><span class="report-tab-label">Sábado por la tarde</span></button><button class="report-tab" data-value="h12"><span class="report-tab-time">12 HS</span><span class="report-tab-label">Domingo al mediodía</span></button></div></div></div></div>
+<main class="container">
+<div class="info-strip" id="info-strip"></div>
+<div class="utility-row"><div class="date-field"><label>Fecha</label><input type="date" id="fecha"></div><div class="utility-spacer"></div><button class="btn-reset" onclick="resetAll()">Limpiar todo</button></div>
+<div class="puertos-grid" id="puertos-grid"></div>
+<div class="stock-card" id="stock-block"><div class="stock-head"><div class="stock-title">Stock ⛰️</div><div class="stock-formula">Stock Hoy = Stock Ayer <span>+</span> Descargas <span>−</span> Embarques</div></div><div id="stock-grid"></div></div>
+<div class="output-card"><div class="output-head"><div class="output-title">Mensaje para WhatsApp</div><div class="output-badge" id="tramo-label"></div></div><textarea id="output" class="output-area" readonly></textarea><div class="output-actions"><button class="btn-copy" onclick="copiarMensaje()">Copiar mensaje</button><button class="btn-regen" onclick="regenerar()">Regenerar</button><div class="output-hint">Pegá el mensaje en WhatsApp sin formato</div></div></div>
+</main>
+<div class="toast" id="toast"><span>Mensaje copiado</span></div>
+<script src="app-fixed.js?v=4"></script>
+</body>
+</html>
